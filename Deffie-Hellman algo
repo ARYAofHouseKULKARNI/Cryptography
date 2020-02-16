@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+  double q, a, b;
+  int A, B, Ak, Bk, tAk, p, tA, tB,  tBk;
+   printf("Enter a large prime no p: \n");
+    scanf("%d",  &p);
+   printf("Enter the second prime no q : \n");
+    scanf("%lf" , &q);
+   printf("Enter the secret large random no for A a: \n");
+    scanf("%lf", &a);
+   printf("Enter the secret large random no for B b: \n");
+    scanf("%lf", &b);
+       tA = (int)pow(q,a);
+        A = (tA) % (p);
+         printf("A is : %d \n", A);
+       tB = (int)pow(q,b);
+        B = (tB) % (p);
+         printf("B is : %d \n", B);
+    tAk = (int)pow(B,a);
+     Ak = (tAk) % (p);
+    tBk = (int)pow(A,b);
+     Bk = (tBk) % (p);
+   printf("The secret key for A is: %d \n", Ak);
+   printf("The secret key for B is: %d \n", Bk);
+printf("If the keys are same, then start communication \n");
+    return 0;
+}
