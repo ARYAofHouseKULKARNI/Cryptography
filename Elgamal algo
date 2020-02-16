@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<string.h>
+
+int main()
+{
+   int p, d, e1, e2, c1, c2, pt, t2, r, tc1, tc2, ans, a1, a2;
+   char str[50] = "hello";
+
+     printf("Step 1: Key generation\n");
+     printf("Enter the prime number p \n");
+       scanf("%d", &p);
+     printf("Enter the decryption key d : \n");
+       scanf("%d" , &d);
+     printf("Enter second part of encryption e1 : \n");
+       scanf("%d" , &e1);
+        t2 = (int)pow(e1, d);
+        e2 = t2 % p; 
+     printf("Public Key is (%d, %d, %d) \n", e1, e2, p);
+
+     printf("Step 2: Encryption\n");
+     printf("Enter the random number r \n");
+       scanf("%d", &r);
+      pt = (strlen(str)); 
+    
+      tc1 = (int)pow(e1,r);
+       c1 = tc1 % p;
+      tc2 = (int)pow(e2,r);
+       c2 = (pt * tc1) % p;
+     printf("The Cypher is (%d, %d) \n", c1, c2);   
+
+}
