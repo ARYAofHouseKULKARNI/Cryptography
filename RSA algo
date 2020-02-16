@@ -1,0 +1,27 @@
+// how to find the private key for RSA algo
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main()
+{
+   int p, q, n, phi, d, i, e;
+     printf("Enter the the prime number p \n");
+       scanf("%d", &p);
+     printf("Enter the second prime no q : \n");
+       scanf("%d" , &q);
+     printf("Enter the value for e \n");
+       scanf("%d", &e);
+     n = p*q;
+     printf("Public key is (%d, %d)\n", e, n);
+     phi = (p-1)*(q-1);
+     i = 0;
+     while( ((phi*i)+1)%e != 0)
+     {
+       i++;
+      }
+      d = ((phi*i)+1)/e;
+     printf("Private key is (%d, %d)\n", d,n);
+   
+}
